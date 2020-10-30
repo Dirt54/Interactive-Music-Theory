@@ -1,16 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <GuitarFretboard />
+  <div>
+    <Navbar />
+    <router-view  />
+    <Footer />
+  </div>
 </template>
 
 <script>
-import GuitarFretboard from './components/GuitarFretboard.vue'
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    GuitarFretboard
-  }
-}
+    Navbar,
+    Footer
+  },
+};
 </script>
 
