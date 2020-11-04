@@ -5,6 +5,11 @@
         {{ value.note }}
       </li>
     </ul>
+    <ul id="v-for-object" class="demo">
+      <li v-for="value in gString2" :key="value">
+        {{ value.note }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -71,13 +76,17 @@ export default {
         },
       ],
 
-      offsetC: 3,
+      standardTunning : { string1 : 7, string2 : 2, string3 : 10, string4 : 5, string5 : 0, string6 : 7 },
+
+
+      offsetC: 0,
     };
   },
 
   methods: {
     stringPopulate(gstringArray, offsetValue) {
       while (gstringArray.length < 22) {
+
         for (let i = 0; i < this.notesArray.length; i++) {
           var offset = (i + offsetValue) % this.notesArray.length;
           gstringArray.push(this.notesArray[offset]);
@@ -88,12 +97,12 @@ export default {
         }
       }
 
-      console.log(gstringArray);
     },
   },
 
   beforeMount() {
     this.stringPopulate(this.gString1, this.offsetC);
+    console.log(this.gString1);
   },
 };
 </script>
